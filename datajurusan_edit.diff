@@ -1,0 +1,130 @@
+<button class="btn btn-warning btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $x['kodejurusan']; ?>">
+                        <i class="bi bi-pencil-square"></i> Edit
+                      </button>
+
+                    <!-- Tombol Hapus -->
+                    <a href="hapus.php?kodejurusan=<?= $x['kodejurusan']; ?>" class="btn btn-danger btn-sm mb-2">
+                      <i class="bi bi-trash"></i> Hapus
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Modal Edit -->
+                <div class="modal fade" id="modalEdit<?= $x['kodejurusan']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="labelEdit<?= $x['kodejurusan']; ?>" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <form action="" method="POST">
+                        <div class="modal-header bg-warning">
+                          <h5 class="modal-title" id="labelEdit<?= $x['kodejurusan']; ?>">Edit Data Jurusan</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <input type="hidden" name="kodejurusan" value="<?= $x['kodejurusan']; ?>">
+                          <div class="mb-3">
+                            <label for="namajurusan<?= $x['kodejurusan']; ?>" class="form-label">Nama Jurusan</label>
+                            <input type="text" class="form-control" id="namajurusan<?= $x['kodejurusan']; ?>" name="namajurusan" value="<?= htmlspecialchars($x['namajurusan']); ?>" required>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                          <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+=======
+                      <!-- Tombol Edit -->
+                      <button 
+                        class="btn btn-warning btn-sm mb-2 btn-edit" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#modalEdit"
+                        data-kodejurusan="<?= $x['kodejurusan']; ?>"
+                        data-namajurusan="<?= htmlspecialchars($x['namajurusan']); ?>"
+                      >
+                        <i class="bi bi-pencil-square"></i> Edit
+                      </button>
+
+                    <!-- Tombol Hapus -->
+                    <a href="hapus.php?kodejurusan=<?= $x['kodejurusan']; ?>" class="btn btn-danger btn-sm mb-2">
+                      <i class="bi bi-trash"></i> Hapus
+                    </a>
+                  </td>
+                </tr>
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+                <!-- Pagination Controls inside card, aligned center -->
+                <div class="card-footer d-flex justify-content-center">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination mb-0">
+                      <?php if ($page > 1): ?>
+                        <li class="page-item">
+                          <a class="page-link" href="?page=<?= $page - 1 ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                      <?php endif; ?>
+
+                      <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?= ($i === $page) ? 'active' : '' ?>">
+                          <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                      <?php endfor; ?>
+
+                      <?php if ($page < $total_pages): ?>
+                        <li class="page-item">
+                          <a class="page-link" href="?page=<?= $page + 1 ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      <?php endif; ?>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Single Modal Edit -->
+          <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="labelEdit" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form action="" method="POST" id="formEdit">
+                  <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="labelEdit">Edit Data Jurusan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="hidden" name="kodejurusan" id="editKodeJurusan" value="">
+                    <div class="mb-3">
+                      <label for="editNamaJurusan" class="form-label">Nama Jurusan</label>
+                      <input type="text" class="form-control" id="editNamaJurusan" name="namajurusan" required>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+      });
+    </script>
+    <!--end::OverlayScrollbars Configure-->
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>
+=======
+      });
+    </script>
+    <!--end::OverlayScrollbars Configure-->
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>

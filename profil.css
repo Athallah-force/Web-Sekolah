@@ -1,0 +1,179 @@
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #3f37c9;
+  --accent: #4895ef;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --success: #4cc9f0;
+  --warning: #f72585;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+}
+
+/* Only apply general resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background-color: #f5f7ff;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Specific card style for profile page */
+.profile-card {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(67, 97, 238, 0.15);
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(67, 97, 238, 0.2);
+}
+
+.profile-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1.25rem 1.5rem;
+  font-weight: bold;
+}
+
+/* Form layout */
+.profile-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.profile-form {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Form table layout */
+.profile-form table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1.25rem;
+}
+
+.profile-form table td:first-child {
+  width: 30%;
+  font-weight: 600;
+  padding-right: 1rem;
+  vertical-align: middle;
+}
+
+/* Input styling */
+.profile-form input[type="text"],
+.profile-form input[type="number"],
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: var(--light);
+  transition: all 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.15);
+}
+
+/* Button styles */
+.profile-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  border-top: 2px solid var(--light-gray);
+  padding-top: 1.5rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-form table td {
+    display: block;
+    width: 100%;
+  }
+
+  .profile-form table td:first-child {
+    padding-bottom: 0.5rem;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,364 @@
+<button class="btn btn-warning btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $x['nisn']; ?>">Edit</button>
+
+                  <!-- Modal Edit -->
+                  <div class="modal fade" id="modalEdit<?= $x['nisn']; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="labelEdit<?= $x['nisn']; ?>" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <form action="" method="POST">
+                          <div class="modal-header bg-warning">
+                            <h5 class="modal-title" id="labelEdit<?= $x['nisn']; ?>">Edit Data Siswa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <input type="hidden" name="nisn" value="<?= $x['nisn']; ?>">
+                            <div class="mb-3">
+                              <label class="form-label">Nama</label>
+                              <input type="text" class="form-control" name="nama" value="<?= htmlspecialchars($x['nama']); ?>" required>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">Jenis Kelamin</label>
+                              <select name="jeniskelamin" class="form-select">
+                                <option value="L" <?= $x['jeniskelamin'] == 'L' ? 'selected' : '' ?>>Laki-laki</option>
+                                <option value="P" <?= $x['jeniskelamin'] == 'P' ? 'selected' : '' ?>>Perempuan</option>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">Jurusan</label>
+                              <select name="jurusan" class="form-select" required>
+                                <?php foreach ($db->tampil_jurusan() as $jur) : ?>
+                                  <option value="<?= $jur['kodejurusan']; ?>" <?= $jur['namajurusan'] == $x['kodejurusan'] ? 'selected' : ''; ?>>
+                                    <?= $jur['namajurusan']; ?>
+                                  </option>
+                                <?php endforeach; ?>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">Kelas</label>
+                              <input type="text" class="form-control" name="kelas" value="<?= htmlspecialchars($x['kelas']); ?>" required>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">Alamat</label>
+                              <input type="text" class="form-control" name="alamat" value="<?= htmlspecialchars($x['alamat']); ?>">
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">Agama</label>
+                              <select name="agama" class="form-select" required>
+                                <?php foreach ($db->tampil_agama() as $agm) : ?>
+                                  <option value="<?= $agm['idagama']; ?>" <?= $agm['idagama'] == $x['agama'] ? 'selected' : ''; ?>>
+                                    <?= htmlspecialchars($agm['namaagama']); ?>
+                                  </option>
+                                <?php endforeach; ?>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">No HP</label>
+                              <input type="text" class="form-control" name="nohp" value="<?= htmlspecialchars($x['nohp']); ?>">
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+=======
+                  <!-- Tombol Edit -->
+                  <button 
+                    class="btn btn-warning btn-sm mb-2 btn-edit" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modalEdit"
+                    data-nisn="<?= $x['nisn']; ?>"
+                    data-nama="<?= htmlspecialchars($x['nama']); ?>"
+                    data-jeniskelamin="<?= $x['jeniskelamin']; ?>"
+                    data-jurusan="<?= $x['kodejurusan']; ?>"
+                    data-kelas="<?= htmlspecialchars($x['kelas']); ?>"
+                    data-alamat="<?= htmlspecialchars($x['alamat']); ?>"
+                    data-agama="<?= $x['agama']; ?>"
+                    data-nohp="<?= htmlspecialchars($x['nohp']); ?>"
+                  >Edit</button>
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+<!-- Pagination Controls inside card, aligned bottom right -->
+                  <div class="card-footer d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination mb-0">
+                        <?php if ($page > 1): ?>
+                          <li class="page-item">
+                            <a class="page-link" href="?page=<?= $page - 1 ?>" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                          <li class="page-item <?= ($i === $page) ? 'active' : '' ?>">
+                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                          </li>
+                        <?php endfor; ?>
+
+                        <?php if ($page < $total_pages): ?>
+                          <li class="page-item">
+                            <a class="page-link" href="?page=<?= $page + 1 ?>" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        <?php endif; ?>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <!-- /.card -->
+                
+              </div>
+              <!-- /.col -->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+
+      <!--end::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">Anything you want</div>
+        <!--end::To the end-->
+        <!--begin::Copyright-->
+        <strong>
+          Copyright &copy; 2014-2024&nbsp;
+          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+        </strong>
+        All rights reserved.
+        <!--end::Copyright-->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
+      integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="dist/js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script>
+      const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
+      const Default = {
+        scrollbarTheme: 'os-theme-light',
+        scrollbarAutoHide: 'leave',
+        scrollbarClickScroll: true,
+      };
+      document.addEventListener('DOMContentLoaded', function () {
+        const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+        if (sidebarWrapper && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
+          OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+            scrollbars: {
+              theme: Default.scrollbarTheme,
+              autoHide: Default.scrollbarAutoHide,
+              clickScroll: Default.scrollbarClickScroll,
+            },
+          });
+        }
+=======
+<!-- Pagination Controls inside card, aligned bottom right -->
+                  <div class="card-footer d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination mb-0">
+                        <?php if ($page > 1): ?>
+                          <li class="page-item">
+                            <a class="page-link" href="?page=<?= $page - 1 ?>" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                          <li class="page-item <?= ($i === $page) ? 'active' : '' ?>">
+                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                          </li>
+                        <?php endfor; ?>
+
+                        <?php if ($page < $total_pages): ?>
+                          <li class="page-item">
+                            <a class="page-link" href="?page=<?= $page + 1 ?>" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        <?php endif; ?>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <!-- /.card -->
+                
+              </div>
+              <!-- /.col -->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Container-->
+        </div>
+        <!--end::App Content-->
+      </main>
+      <!--end::App Main-->
+
+      <!-- Single Modal Edit -->
+      <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="labelEdit" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <form action="" method="POST" id="formEdit">
+              <div class="modal-header bg-warning">
+                <h5 class="modal-title" id="labelEdit">Edit Data Siswa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <input type="hidden" name="nisn" id="editNisn" value="">
+                <div class="mb-3">
+                  <label class="form-label">Nama</label>
+                  <input type="text" class="form-control" name="nama" id="editNama" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Jenis Kelamin</label>
+                  <select name="jeniskelamin" class="form-select" id="editJenisKelamin">
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Jurusan</label>
+                  <select name="jurusan" class="form-select" id="editJurusan" required>
+                    <?php foreach ($db->tampil_jurusan() as $jur) : ?>
+                      <option value="<?= $jur['kodejurusan']; ?>"><?= $jur['namajurusan']; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Kelas</label>
+                  <input type="text" class="form-control" name="kelas" id="editKelas" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Alamat</label>
+                  <input type="text" class="form-control" name="alamat" id="editAlamat">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Agama</label>
+                  <select name="agama" class="form-select" id="editAgama" required>
+                    <?php foreach ($db->tampil_agama() as $agm) : ?>
+                      <option value="<?= $agm['idagama']; ?>"><?= htmlspecialchars($agm['namaagama']); ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">No HP</label>
+                  <input type="text" class="form-control" name="nohp" id="editNoHp">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--end::App Wrapper-->
+      <!--begin::Script-->
+      <!--begin::Third Party Plugin(OverlayScrollbars)-->
+      <script
+        src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
+        integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
+        crossorigin="anonymous"
+      ></script>
+      <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+      ></script>
+      <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"
+      ></script>
+      <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+      <script src="dist/js/adminlte.js"></script>
+      <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+      <script>
+        const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
+        const Default = {
+          scrollbarTheme: 'os-theme-light',
+          scrollbarAutoHide: 'leave',
+          scrollbarClickScroll: true,
+        };
+        document.addEventListener('DOMContentLoaded', function () {
+          const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+          if (sidebarWrapper && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
+            OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+              scrollbars: {
+                theme: Default.scrollbarTheme,
+                autoHide: Default.scrollbarAutoHide,
+                clickScroll: Default.scrollbarClickScroll,
+              },
+            });
+          }
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+      });
+    </script>
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>
+=======
+      });
+      // JavaScript to populate the edit modal dynamically
+      const editModal = document.getElementById('modalEdit');
+      const editNisn = document.getElementById('editNisn');
+      const editNama = document.getElementById('editNama');
+      const editJenisKelamin = document.getElementById('editJenisKelamin');
+      const editJurusan = document.getElementById('editJurusan');
+      const editKelas = document.getElementById('editKelas');
+      const editAlamat = document.getElementById('editAlamat');
+      const editAgama = document.getElementById('editAgama');
+      const editNoHp = document.getElementById('editNoHp');
+
+      document.querySelectorAll('.btn-edit').forEach(button => {
+        button.addEventListener('click', () => {
+          editNisn.value = button.getAttribute('data-nisn');
+          editNama.value = button.getAttribute('data-nama');
+          editJenisKelamin.value = button.getAttribute('data-jeniskelamin');
+          editJurusan.value = button.getAttribute('data-jurusan');
+          editKelas.value = button.getAttribute('data-kelas');
+          editAlamat.value = button.getAttribute('data-alamat');
+          editAgama.value = button.getAttribute('data-agama');
+          editNoHp.value = button.getAttribute('data-nohp');
+        });
+      });
+    });
+  </script>
+  <!--end::Script-->
+</body>
+<!--end::Body-->
+</html>

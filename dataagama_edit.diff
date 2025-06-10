@@ -1,0 +1,103 @@
+<button class="btn btn-warning btn-sm mb-2" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#modalEdit<?= $x['idagama']; ?>">
+                      <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+
+                    <!-- Tombol Hapus -->
+                    <a href="hapus.php?idagama=<?= $x['idagama']; ?>" class="btn btn-danger btn-sm mb-2">
+                      <i class="bi bi-trash"></i> Hapus
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Modal Edit -->
+                <div class="modal fade" id="modalEdit<?= $x['idagama']; ?>" 
+                     data-bs-backdrop="static" 
+                     data-bs-keyboard="false" 
+                     tabindex="-1" 
+                     aria-labelledby="labelEdit<?= $x['idagama']; ?>" 
+                     aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <form action="" method="POST">
+                        <div class="modal-header bg-warning">
+                          <h5 class="modal-title" id="labelEdit<?= $x['idagama']; ?>">Edit Data Agama</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <input type="hidden" name="idagama" value="<?= $x['idagama']; ?>">
+                          <div class="mb-3">
+                            <label for="namaagama<?= $x['idagama']; ?>" class="form-label">Nama Agama</label>
+                            <input type="text" class="form-control" id="namaagama<?= $x['idagama']; ?>" name="namaagama" value="<?= htmlspecialchars($x['namaagama']); ?>" required>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                          <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+=======
+                    <!-- Tombol Edit -->
+                    <button class="btn btn-warning btn-sm mb-2 btn-edit" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#modalEdit"
+                            data-idagama="<?= $x['idagama']; ?>"
+                            data-namaagama="<?= htmlspecialchars($x['namaagama']); ?>">
+                      <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+
+                    <!-- Tombol Hapus -->
+                    <a href="hapus.php?idagama=<?= $x['idagama']; ?>" class="btn btn-danger btn-sm mb-2">
+                      <i class="bi bi-trash"></i> Hapus
+                    </a>
+                  </td>
+                </tr>
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+        <!-- Single Modal Edit -->
+        <div class="modal fade" id="modalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="labelEdit" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <form action="" method="POST" id="formEdit">
+                <div class="modal-header bg-warning">
+                  <h5 class="modal-title" id="labelEdit">Edit Data Agama</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <input type="hidden" name="idagama" id="editIdAgama" value="">
+                  <div class="mb-3">
+                    <label for="editNamaAgama" class="form-label">Nama Agama</label>
+                    <input type="text" class="form-control" id="editNamaAgama" name="namaagama" required>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                  <button type="submit" class="btn btn-warning">Simpan Perubahan</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+>>>>>>> REPLACE
+
+<<<<<<< SEARCH
+      });
+    </script>
+    <!--end::OverlayScrollbars Configure-->
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>
+=======
+      });
+    </script>
+    <!--end::OverlayScrollbars Configure-->
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>
